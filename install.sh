@@ -6,13 +6,12 @@ cp .status.sh ~/
 cp .vimrc ~/
 cp .wallpaper.jpg ~/
 cp .Xresources ~/
-echo "Is this your laptop? (y/n)"
-read laptop
+echo "Install laptop i3 config? (y/n)"; read laptop
 if [ "$laptop" == "y" ]; then
-	cp ./laptop/config ~/.config/i3/config
+	cp config-laptop ~/.config/i3/config
 elif [ "$laptop" == "n" ]; then
-	cp config ~/.config/i3/config
+	cp config-desktop ~/.config/i3/config
 fi
 sudo cp lightdm-gtk-greeter.conf /etc/lightdm/
 sudo cp local.conf /etc/fonts/
-cp solarized.vim ~/.vim/colors
+cp solarized.vim ~/.vim/colors/
