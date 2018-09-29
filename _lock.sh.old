@@ -1,0 +1,8 @@
+#!/bin/sh
+if ! pgrep i3lock 
+then 
+	scrot /tmp/lock.png
+	convert /tmp/lock.png -blur 0x4 /tmp/lock.png
+	i3lock -u -i /tmp/lock.png
+	rm /tmp/lock.png
+fi
