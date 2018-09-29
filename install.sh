@@ -14,4 +14,5 @@ elif [ "$laptop" == "n" ]; then
 	cp config ~/.config/i3/config
 fi
 sudo cp lightdm-gtk-greeter.conf /etc/lightdm/
+sudo cp local.conf /etc/fonts/
 cp solarized.vim ~/.vim/colors
