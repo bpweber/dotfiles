@@ -1,5 +1,5 @@
 #!/bin/sh
-cp .lock-locked.png ~/
+cp .lock.png ~/
 cp .lock.sh ~/
 cp .lock-suspend.sh ~/
 cp .status.sh ~/
