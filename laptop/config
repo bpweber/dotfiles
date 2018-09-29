@@ -180,7 +180,7 @@ exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
 exec --no-startup-id compton
 exec --no-startup-id xautolock -detectsleep -time 10 -locker ~/.lock-suspend.sh 
 exec --no-startup-id xset s off -dpms
-exec --no-startup-id pragha
+#exec --no-startup-id pragha
 
 exec --no-startup-id cbatticon
 exec --no-startup-id nm-applet
