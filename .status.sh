@@ -1,6 +1,6 @@
 #!/bin/sh
 while true
 do
-	date +"%A %B %-d, %-I:%M" 
+	date +"%A, %b %-d %-I:%M" 
 	sleep 1;
 done
