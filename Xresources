@@ -12,9 +12,12 @@ rofi.color-normal:	#002b36,	#586e75,	#002b36,	#002b36,	#93a1a1
 rofi.color-active:	#002b36,	#586e75,	#002b36,	#002b36,	#93a1a1
 rofi.color-urgent:	#002b36,	#586e75,	#002b36,	#002b36,	#93a1a1
 
-rofi.show-match: false
 rofi.width: 30
-rofi.padding: 15
+rofi.padding: 20
 rofi.lines: 5
-rofi.font: Monaco Bold 15
+rofi.separator-style: none
+!rofi.font: Monaco Bold 15
+rofi.font: Product Sans 20
+rofi.bw: 0
+!rofi.eh: 2
 rofi.hide-scrollbar: true
