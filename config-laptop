@@ -158,22 +158,15 @@ set $urgent-bg-color     #E53935
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-#	i3bar_command i3bar -t
 	status_command ~/.status.sh
-#	position top
-#	font pango:Monaco Bold 12
 	font pango:Product Sans Bold 13
 	colors {
-                 background $bg-color
-# 				background #00000000
-				separator #757575
-                 #                  border             background         text
-                 focused_workspace  $bg-color          $bg-color          $text-color
-                inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-				urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-#                 focused_workspace  #00000000          #00000000          $text-color
-#                 inactive_workspace #00000000		   #00000000		  $inactive-text-color
-#                 urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+			background $bg-color
+			separator #757575
+			#                  border             background         text
+			focused_workspace  $bg-color          $bg-color          $text-color
+			inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+			urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 		}
 }
 
@@ -184,16 +177,13 @@ new_float none
 
 exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
 exec --no-startup-id compton
-exec --no-startup-id xautolock -detectsleep -time 10 -locker ~/.lock-suspend.sh 
-exec --no-startup-id xset s off -dpms
-#exec --no-startup-id pragha
+#exec --no-startup-id xautolock -detectsleep -time 10 -locker ~/.lock-suspend.sh 
+#exec --no-startup-id xset s off -dpms
+exec --no-startup-id light-locker --no-late-locking --lock-on-suspend
 
 exec --no-startup-id cbatticon
 exec --no-startup-id nm-applet
-#exec --no-startup-id blueman-applet
 exec --no-startup-id xinput set-prop 12 286 1
-
-assign [class="Pragha"] 10
 
 bindsym $mod+d exec rofi -show run
 bindsym Print exec scrot -e 'mv $f ~/Pictures'
@@ -213,14 +203,17 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
-set $Locker ~/.lock.sh && sleep 1
+#set $Locker ~/.lock.sh && sleep 1
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id $Locker, mode "default"
+#	bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym l exec --no-startup-id light-locker-command -l, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+# 	bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+	bindsym s exec --no-startup-id xset dpms force off && systemctl suspend, mode "default"
+#   bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+   	bindsym h exec --no-startup-id xset dpms force off && systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
 
