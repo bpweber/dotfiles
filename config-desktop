@@ -160,6 +160,7 @@ set $urgent-bg-color     #E53935
 bar {
 	status_command ~/.status.sh
 	font pango:Product Sans Bold 13
+	position top
 	colors {
 			background $bg-color
 			separator #757575
@@ -174,6 +175,7 @@ gaps inner 15
 gaps outer 0
 new_window none
 new_float none
+smart_gaps on
 
 exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
 exec --no-startup-id compton
