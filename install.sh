@@ -1,17 +1,9 @@
 #!/bin/sh
-cp .lock.png ~/
-cp .lock.sh ~/
-cp .lock-suspend.sh ~/
-cp .status.sh ~/
 cp .vimrc ~/
-cp .wallpaper.jpg ~/
-cp .Xresources ~/
-echo "Install laptop i3 config? (y/n)"; read laptop
-if [ "$laptop" == "y" ]; then
-	cp config-laptop ~/.config/i3/config
-elif [ "$laptop" == "n" ]; then
-	cp config-desktop ~/.config/i3/config
-fi
-sudo cp lightdm-gtk-greeter.conf /etc/lightdm/
-sudo cp local.conf /etc/fonts/
+cp .wallpaper.jpg ~/Pictures
+sudo cp index.css /usr/share/lightdm-webkit/themes/arch/
+sudo cp main.js /usr/share/lightdm-webkit/themes/arch/
+sudo cp wallpaper.jpg /usr/share/lightdm-webkit/themes/arch/
+sudo mkdir /usr/share/fonts/product-sans
+sudo cp product-sans/* /usr/share/fonts/
 cp solarized.vim ~/.vim/colors/
