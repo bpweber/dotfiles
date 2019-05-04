@@ -1,1 +1,1 @@
-various dotfiles for vim and i3 configs
+basically just dotfiles for vim, also google fonts
